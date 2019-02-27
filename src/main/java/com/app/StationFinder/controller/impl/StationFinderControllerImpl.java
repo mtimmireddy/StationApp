@@ -57,7 +57,7 @@ public class StationFinderControllerImpl implements StationFinderController {
 	@Override
 	@RequestMapping(value = "/{Station_Id}", method = RequestMethod.GET,
     produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Station> getStationDetailsById(String stationId) {
+	public ResponseEntity<Station> getStationDetailsById(Long stationId) {
 		
 		Station retrievedStationById = stationFinderService.getStationDetailsById(stationId);
 		
@@ -66,6 +66,16 @@ public class StationFinderControllerImpl implements StationFinderController {
 		
 		return new ResponseEntity<Station>(retrievedStationById, HttpStatus.OK);
 		
+	}
+	
+	@Override
+	@RequestMapping(method = RequestMethod.PUT,consumes = MediaType.APPLICATION_JSON_VALUE,
+    produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Station> updateStationDetails(@Valid @RequestBody final Station station){
+		
+		Station updatedStation = stationFinderService.updateStation(station);
+		
+		return new ResponseEntity<Station>(updatedStation, HttpStatus.OK);
 	}
 
 }

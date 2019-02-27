@@ -9,6 +9,6 @@ public interface StationFinderController {
 	
 	ResponseEntity<Station> createStationDetails(Station station);
 	ResponseEntity<Station> getStationDetailsByName(String name);
-	ResponseEntity<Station> getStationDetailsById(String stationId);
-	
+	ResponseEntity<Station> getStationDetailsById(Long stationId);
+	ResponseEntity<Station> updateStationDetails(Station station);
 }

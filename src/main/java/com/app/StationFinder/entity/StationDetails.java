@@ -21,9 +21,10 @@ public class StationDetails implements Serializable {
 	 */
 	private static final long serialVersionUID = 4269850418721274111L;
 	
-	 @Id @GeneratedValue
-	    @Column(name = "Station_Id", unique = true, nullable = false)
-	    private String stationId;
+	 @Id 
+	 @GeneratedValue
+	 @Column(name = "Station_Id", unique = true, nullable = false)
+	 private Long stationId;
 	 
 	 @Column(name = "Station_Name", unique = true, nullable =false)
 	 private String name;
@@ -35,14 +36,18 @@ public class StationDetails implements Serializable {
 	 private String callSign;
 	 
 	 
-	 @OneToMany
-	    @JoinTable(
-	            name = "Station_ID_Table",
-	            joinColumns = {@JoinColumn(name = "Station_Id")},
-	            inverseJoinColumns = {@JoinColumn(name = "Station_Name")}
-	    )
 	 
-	 private ArrayList<StationDetails> stationDetails = new ArrayList<StationDetails>();
+	/*
+	 * @OneToMany
+	 * 
+	 * @JoinTable( name = "Station_ID_Table", joinColumns = {@JoinColumn(name =
+	 * "Station_Id")}, inverseJoinColumns = {@JoinColumn(name = "Station_Name")} )
+	 * 
+	 * private ArrayList<StationDetails> stationDetailsById;
+	 * 
+	 * public StationDetails() { stationDetailsById = new
+	 * ArrayList<StationDetails>(); }
+	 */
 	 
 	 
 	 

@@ -24,7 +24,7 @@ public class Station implements Serializable {
 	@NotNull
 	@NotBlank
 	@JsonProperty(value = "stationId", required = true)
-	private String stationId;
+	private Long stationId;
 	
 	
 	@NotNull
