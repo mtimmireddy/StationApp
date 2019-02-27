@@ -54,11 +54,11 @@
 * All endpoints configuration based on organization hosts and endpoint antology could go in to app.config file
 * Audit logging can be enabled to write audit log information to a database or a data stream(Rabbit MQ) using Spring XD data streams
 * Entitlement rules engine if any can be configured and the api annotated based on the need
-* All PII(Personal Identifiable Information) should be appropriately masked to comply with GDPR regulations
+
 
 ### Circuit Breaker & Customer Product Recommendation
 * Circuit breaking mechanism as Netflix Hystrix can be implemented to help manage the API during downtime scenarios caused due to backend systems failures/errors
-* Based of the information on usage of products by certain customer/companies, the data could be analyzed to send customized product recommendation for customers/companies
+
    
 
 ## Devops Work      
