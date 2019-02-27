@@ -1,0 +1,27 @@
+services:
+
+    db:
+        image: H2:1.0
+        restart: always
+        environment:
+            DB_PASSWORD: root
+           
+        ports:
+            - 8761:3306
+        container_name: H2DB
+        volumes:
+             - .:/docker-entrypoint-initdb.d
+    tomcat:
+       
+        build: .
+        restart: always
+        environment:
+            - JPDA_ADDRESS=7000
+            - JPDA_TRANSPORT=dt_socket
+        ports:
+            - 8888:8080
+            - 8443:8443
+            - 9000:7000
+        entrypoint: /usr/local/tomcat/bin/catalina.sh jpda run
+        depends_on:
+            - db
